@@ -8,4 +8,4 @@
     $id = $_GET['id'];
     $unEleve = $contro->RecupererEleve($id);
     $lienCss = "../../public/css/formulaire.css";
-    include '../formulaireNote.php';
+    include '../formulaireNoteEL.php';

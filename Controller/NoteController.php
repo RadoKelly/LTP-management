@@ -8,4 +8,4 @@
     $id = null;
     $lienCss = null;
     
-    include '../formulaireNote.php';
+    include '../formulaireNoteEL.php';
