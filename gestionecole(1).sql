@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 08 nov. 2024 à 14:44
+-- Généré le : lun. 03 mars 2025 à 09:57
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -43,12 +43,16 @@ CREATE TABLE `cec` (
   `TP` int(11) NOT NULL,
   `MOREX` int(11) NOT NULL,
   `EPS` int(11) NOT NULL,
-  `EE` int(11) NOT NULL
+  `EE` int(11) NOT NULL,
+  `Trimestre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `cec`
 --
+
+INSERT INTO `cec` (`id`, `num_matricule`, `Malagasy`, `Français`, `Anglais`, `MATH`, `RDM`, `SPHYS`, `TECHNO`, `HYDRAU`, `TOPO`, `DESS`, `TP`, `MOREX`, `EPS`, `EE`, `Trimestre`) VALUES
+(1, '4343151', 14, 14, 14, 14, 14, 19, 19, 9, 19, 19, 12, 12, 12, 12, '1er');
 
 -- --------------------------------------------------------
 
@@ -72,23 +76,16 @@ CREATE TABLE `dem` (
   `TP` int(11) NOT NULL,
   `MOREX` int(11) NOT NULL,
   `EPS` int(11) NOT NULL,
-  `EE` int(11) NOT NULL
+  `EE` int(11) NOT NULL,
+  `Trimestre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `dem`
 --
 
-INSERT INTO `dem` (`id`, `num_matricule`, `Malagasy`, `Français`, `Anglais`, `MATH`, `RDM`, `SPHYS`, `TECHNO`, `HYDRAU`, `TOPO`, `DESS`, `TP`, `MOREX`, `EPS`, `EE`) VALUES
-(14, '488768', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5),
-(15, '488768', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14),
-(16, '488768', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14),
-(17, '488768', 88, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8),
-(18, '488768', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(19, '488768', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(20, '488768', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(21, '488768', 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4),
-(22, '2', 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9);
+INSERT INTO `dem` (`id`, `num_matricule`, `Malagasy`, `Français`, `Anglais`, `MATH`, `RDM`, `SPHYS`, `TECHNO`, `HYDRAU`, `TOPO`, `DESS`, `TP`, `MOREX`, `EPS`, `EE`, `Trimestre`) VALUES
+(1, '4357878', 13, 13, 13, 13, 13, 15, 15, 15, 15, 18, 18, 18, 16, 16, '1er');
 
 -- --------------------------------------------------------
 
@@ -112,18 +109,16 @@ CREATE TABLE `el` (
   `INST` int(11) NOT NULL,
   `ESMES` int(11) NOT NULL,
   `EPS` int(11) NOT NULL,
-  `EE` int(11) NOT NULL
+  `EE` int(11) NOT NULL,
+  `Trimestre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `el`
 --
 
-INSERT INTO `el` (`id`, `num_matricule`, `Malagasy`, `Français`, `Anglais`, `MATH`, `SPHYS`, `ELEC`, `TECHNO`, `Equipement`, `SCH_AUTO`, `DESS`, `INST`, `ESMES`, `EPS`, `EE`) VALUES
-(13, '11111', 12, 13, 15, 30, 45, 45, 15, 45, 45, 12, 13, 23, 13, 12),
-(14, '4535', 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
-(15, '4535', 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2),
-(16, '4535', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `el` (`id`, `num_matricule`, `Malagasy`, `Français`, `Anglais`, `MATH`, `SPHYS`, `ELEC`, `TECHNO`, `Equipement`, `SCH_AUTO`, `DESS`, `INST`, `ESMES`, `EPS`, `EE`, `Trimestre`) VALUES
+(1, '6535', 15, 15, 15, 15, 15, 15, 16, 16, 16, 16, 13, 13, 13, 13, '1er');
 
 -- --------------------------------------------------------
 
@@ -141,23 +136,47 @@ CREATE TABLE `eleves` (
   `sexe` varchar(6) NOT NULL,
   `secteur` varchar(255) NOT NULL,
   `filiere` varchar(255) NOT NULL,
-  `niveau` varchar(255) NOT NULL
+  `niveau` varchar(255) NOT NULL,
+  `Contact` varchar(100) NOT NULL,
+  `Address` varchar(100) NOT NULL,
+  `Inscription` varchar(100) NOT NULL,
+  `Observation` varchar(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `eleves`
 --
 
-INSERT INTO `eleves` (`id`, `nom`, `prenom`, `date_naissance`, `numero`, `matricule`, `sexe`, `secteur`, `filiere`, `niveau`) VALUES
-(1, 'rado', 'nirinaiii', '2024-10-02', 17, '4535', 'H', 'genie civile', 'el', '1er'),
-(2, 'jjjj', 'ddd', '2024-10-02', 3, '455', 'H', 'genie civile', 'el', '1er'),
-(3, 'jean', 'bas', '2024-11-15', 2, '488768', 'H', 'ter', 'dem', '1er'),
-(4, 'kotog3', 'kotog3', '1932-01-06', 2, '46546', 'H', 'ter', 'g3', '3em'),
-(5, 'kotoOM', 'kotoOM', '2008-11-07', 5, '45454', 'H', 'indu', 'om', '3em'),
-(6, 'kotoCEC', 'kotoCEC', '1997-11-07', 2, '2', 'H', 'gc', 'cec', '1er'),
-(8, 'radoOB', 'radoOB', '2024-11-04', 4, '3453453', 'H', 'indu', 'ob', '3em'),
-(9, 'kotoG2', 'kotoG2', '2024-11-06', 4, '35487', 'H', 'ter', 'g2', '2em'),
-(10, 'radoG2', 'radoG2', '2024-11-13', 3, '273649', 'F', 'ter', 'g2', '3em');
+INSERT INTO `eleves` (`id`, `nom`, `prenom`, `date_naissance`, `numero`, `matricule`, `sexe`, `secteur`, `filiere`, `niveau`, `Contact`, `Address`, `Inscription`, `Observation`) VALUES
+(6, 'RATIANARIVELO', 'Radonirina', '2025-02-06', 11, '4343151', 'H', 'gc', 'cec', '1er', '0337453917', '0518 C 245 Ambalavato Sud', '2024-2025', 'Passant'),
+(2, 'koto', 'koto', '2024-12-11', 10, '4357878', 'H', 'indu', 'dem', '1er', '033148565', '518 C 245 Ambalavato', '2024-2025', 'Passant'),
+(3, 'test', 'testtttt', '2024-12-06', 5545454, '545454', 'H', 'gc', 'el', '1er', '0337453917', '0518 C 245 Ambalavato Sud', '2024-2025', 'Passant'),
+(4, 'eleve3', 'eleve3', '2024-12-13', 22, '11112222', 'H', 'gc', 'el', '1er', '0337453917', '0518 C 245 Ambalavato Sud', '2024-2025', 'Passant'),
+(5, 'eleve4', 'eleve4', '2024-12-11', 9, '1212121', 'H', 'gc', 'ob', '1er', '0337453917', '0518 C 245 Ambalavato Sud', '2024-2025', 'Passant');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `fm`
+--
+
+CREATE TABLE `fm` (
+  `id` int(11) NOT NULL,
+  `num_matricule` varchar(255) NOT NULL,
+  `Malagasy` int(11) NOT NULL,
+  `Français` int(11) NOT NULL,
+  `Anglais` int(11) NOT NULL,
+  `MATH` int(11) NOT NULL,
+  `SPHYS` int(11) NOT NULL,
+  `TECHNO` int(11) NOT NULL,
+  `MRDM` int(11) NOT NULL,
+  `ANFAB` int(11) NOT NULL,
+  `TP` int(11) NOT NULL,
+  `DESS` int(11) NOT NULL,
+  `EPS` int(11) NOT NULL,
+  `EE` int(11) NOT NULL,
+  `Trimestre` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -191,7 +210,9 @@ CREATE TABLE `g2` (
 --
 
 INSERT INTO `g2` (`id`, `num_matricule`, `Malagasy`, `Français`, `Anglais`, `MATH_G`, `Philosophie`, `Maths_fi`, `Statistiques`, `Compta`, `INFO`, `Economie`, `Droit_fiscal`, `Droit_com`, `Droit_soc`, `EPS`, `EE`, `Trimestre`) VALUES
-(20, '273649', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '3em');
+(1, '23322', 12, 12, 12, 12, 12, 18, 18, 18, 18, 18, 18, 19, 19, 19, 19, '1er'),
+(2, '23322', 12, 12, 12, 12, 12, 18, 18, 18, 18, 18, 18, 19, 19, 19, 19, '1er'),
+(3, '23322', 12, 12, 12, 12, 12, 18, 18, 18, 18, 18, 18, 19, 19, 19, 19, '1er');
 
 -- --------------------------------------------------------
 
@@ -222,19 +243,6 @@ CREATE TABLE `g3` (
   `Trimestre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Déchargement des données de la table `g3`
---
-
-INSERT INTO `g3` (`id`, `num_matricule`, `Malagasy`, `Français`, `Anglais`, `MATH_G`, `Philosophie`, `Maths_fi`, `Statistiques`, `Compta_g`, `INFO`, `Economie`, `Droit_fiscal`, `Droit_com`, `Droit_soc`, `Droit_civ`, `Tec_com`, `EPS`, `EE`, `Trimestre`) VALUES
-(14, '46546', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(15, '46546', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(16, '46546', 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, ''),
-(17, '46546', 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, ''),
-(18, '46546', 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, '2em'),
-(19, '46546', 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, '1er'),
-(20, '46546', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '1er');
-
 -- --------------------------------------------------------
 
 --
@@ -246,34 +254,25 @@ CREATE TABLE `note` (
   `id_eleve` int(11) NOT NULL,
   `id_filiere` int(11) NOT NULL,
   `id_classe` int(11) NOT NULL,
-  `moyenne` double NOT NULL,
+  `total_note` int(5) NOT NULL,
+  `moyenne` float(10,0) NOT NULL,
   `rang` int(11) DEFAULT NULL,
   `appreciation` varchar(255) NOT NULL,
   `absence` int(11) NOT NULL,
-  `retard` int(11) NOT NULL
+  `retard` int(11) NOT NULL,
+  `trimestre` varchar(11) NOT NULL,
+  `moyenne_classe` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `note`
 --
 
-INSERT INTO `note` (`id_note`, `id_eleve`, `id_filiere`, `id_classe`, `moyenne`, `rang`, `appreciation`, `absence`, `retard`) VALUES
-(7, 3, 13, 0, 8.2439024390244, 1, 'aaaaa', 3, 2),
-(8, 1, 14, 0, 0.68292682926829, 1, '2', 2, 2),
-(9, 1, 14, 0, 0.68292682926829, 1, 'mmmmmmmmmmm', 2, 2),
-(10, 1, 14, 0, 0.68292682926829, 1, '1', 1, 1),
-(11, 3, 14, 0, 1.7073170731707, 1, 'demdemdem', 1, 1),
-(12, 3, 14, 0, 1.7073170731707, 1, '4', 4, 4),
-(13, 4, 14, 0, 0, 1, '7', 7, 7),
-(14, 5, 14, 0, 0.36111111111111, 1, 'om', 1, 1),
-(15, 5, 14, 0, 0.36111111111111, 1, 'om', 5, 5),
-(16, 6, 22, 0, 3.5, 1, 'cec', 9, 9),
-(17, 6, 22, 0, 3.5, 1, 'cec', 9, 9),
-(18, 4, 14, 0, 0, 1, '1er trimestre', 2, 2),
-(19, 4, 14, 0, 0, 1, 'mmm', 7, 7),
-(20, 8, 3, 0, 7, 1, '7', 7, 7),
-(21, 4, 14, 0, 0, 1, '4', 1, 2),
-(22, 10, 20, 0, 0, 1, 'g2', 2, 3);
+INSERT INTO `note` (`id_note`, `id_eleve`, `id_filiere`, `id_classe`, `total_note`, `moyenne`, `rang`, `appreciation`, `absence`, `retard`, `trimestre`, `moyenne_classe`) VALUES
+(1, 1, 1, 0, 206, 15, 1, '', 2, 2, '1er', 0),
+(2, 2, 1, 0, 211, 15, 1, '', 0, 0, '1er', 0),
+(3, 5, 6, 0, 196, 14, 1, '', 0, 0, '1er', 0),
+(4, 6, 1, 0, 203, 15, 1, '', 0, 0, '1er', 0);
 
 -- --------------------------------------------------------
 
@@ -306,11 +305,13 @@ CREATE TABLE `ob` (
 --
 
 INSERT INTO `ob` (`id`, `num_matricule`, `Malagasy`, `FRANCAIS`, `Anglais`, `MATH`, `SPHYS`, `OTS`, `TECHNO`, `RDM`, `EFAB`, `DESS`, `TP`, `GEOD`, `IE`, `EPS`, `TRIMESTRE`) VALUES
-(1, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(2, '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ''),
-(3, '3453453', 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, '1er'),
-(4, '3453453', 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, '1er'),
-(5, '3453453', 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, '1er');
+(1, '6535', 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, '3em'),
+(2, '6535', 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, '3em'),
+(3, '6535', 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, '3em'),
+(4, '6535', 19, 19, 19, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 13, '3em'),
+(5, '6535', 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, '1er'),
+(6, '1212121', 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, '1er'),
+(7, '1212121', 12, 12, 12, 12, 12, 19, 19, 19, 19, 19, 17, 17, 17, 15, '1er');
 
 -- --------------------------------------------------------
 
@@ -333,18 +334,9 @@ CREATE TABLE `om` (
   `TP` int(11) NOT NULL,
   `DESS` int(11) NOT NULL,
   `EPS` int(11) NOT NULL,
-  `EE` int(11) NOT NULL
+  `EE` int(11) NOT NULL,
+  `Trimestre` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `om`
---
-
-INSERT INTO `om` (`id`, `num_matricule`, `Malagasy`, `Français`, `Anglais`, `MATH`, `SPHYS`, `TECHNO`, `RDM`, `ANFAB`, `TRC`, `TP`, `DESS`, `EPS`, `EE`) VALUES
-(14, '45454', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-(15, '45454', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-(16, '45454', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-(17, '45454', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5);
 
 -- --------------------------------------------------------
 
@@ -395,6 +387,12 @@ ALTER TABLE `eleves`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `fm`
+--
+ALTER TABLE `fm`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `g2`
 --
 ALTER TABLE `g2`
@@ -438,55 +436,61 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `cec`
 --
 ALTER TABLE `cec`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `dem`
 --
 ALTER TABLE `dem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `el`
 --
 ALTER TABLE `el`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `eleves`
 --
 ALTER TABLE `eleves`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT pour la table `fm`
+--
+ALTER TABLE `fm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `g2`
 --
 ALTER TABLE `g2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `g3`
 --
 ALTER TABLE `g3`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `note`
 --
 ALTER TABLE `note`
-  MODIFY `id_note` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_note` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `ob`
 --
 ALTER TABLE `ob`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `om`
 --
 ALTER TABLE `om`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateur`
