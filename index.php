@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <div class="img">
-            <img src="./public/img/true_friends.svg" alt="">
+            <img src="./public/img/ltp_logo.png" alt="">
         </div>
         <div class="login-container">
             <form action="Controller/AuthentificationController.php" method="post">

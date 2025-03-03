@@ -7,5 +7,5 @@
     $unEleve = null;
     $id = null;
     $lienCss = null;
-    
+
     include '../formulaireNoteEL.php';

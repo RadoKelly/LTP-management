@@ -7,8 +7,9 @@
     <title>Formulaire</title>
 </head>
 <body>
+
     <div class="container">
-        <header>Inscription</header>
+        <header>Modification</header>
 
         <form action="Controller/ModifierEleveController.php" method="post">
         <input type="number" name="id" hidden readonly value="<?php echo $eleve->getId(); ?>">
@@ -52,22 +53,55 @@
                             </select>
                         </div>
 
+                        <div class="input-field">
+                            <label>Contact</label>
+                            <input type="text" name="contact" placeholder="Entrer le contact" required value="<?php echo $eleve->getContact(); ?>">
+                        </div>
+
+                        <div class="input-field">
+                            <label >Address</label>
+                            <input type="text" name="address" placeholder="Entrer l'address" required value="<?php echo $eleve->getAddress(); ?>">
+                        </div>
+
+                        <div class="input-field">
+                        <label for="inscription">Année Scolaire</label>
+                            <select name="inscription" id="inscription">
+                                <option <?php if($eleve->getInscription() == "2024-2025"){ ?> selected <?php }?>value="2024-2025">2024-2025</option>
+                                <option <?php if($eleve->getInscription() == "2025-2026"){ ?> selected <?php }?>value="2025-2026">2025-2026</option>
+                                <option <?php if($eleve->getInscription() == "2026-2027"){ ?> selected <?php }?>value="2026-2027">2026-2027</option>
+                            </select>    
+                        </div>
+
+                        <div class="input-field">
+                        <label for="observation">Observation</label>
+                            <select name="observation" id="sexe">
+                                <option <?php if($eleve->getObservation() == "Passant"){ ?> selected <?php }?>value="Passant">Passant</option>
+                                <option <?php if($eleve->getObservation() == "Redoublant"){ ?> selected <?php }?>value="Redoublant">Redoublant</option>
+                            </select>    
+                        </div>
+
                         <hr>
 
                         <div class="input-field">
                             <label for="secteur">Secteur</label>
                             <select name="secteur" id="secteur">
-                                <option <?php if($eleve->getSecteur() == "genie civile"){ ?> selected <?php }?> value="genie civile">Génie_Civil</option>
-                                <option <?php if($eleve->getSecteur() == "industrielle"){ ?> selected <?php }?> value="industrielle">Industrièl</option>
-                                <option <?php if($eleve->getSecteur() == "Tertiaire"){ ?> selected <?php }?> value="tertiaire">Tertiaire</option>
+                                <option <?php if($eleve->getSecteur() == "gc"){ ?> selected <?php }?> value="gc">Génie_Civil</option>
+                                <option <?php if($eleve->getSecteur() == "indu"){ ?> selected <?php }?> value="indu">Industrièl</option>
+                                <option <?php if($eleve->getSecteur() == "ter"){ ?> selected <?php }?> value="ter">Tertiaire</option>
                             </select>
                         </div>
 
                         <div class="input-field">
                             <label for="filiere">Filière</label>
                             <select name="filiere" id="filiere">
-                                <option <?php if($eleve->getFiliere() == "G1"){ ?> selected <?php }?> value="G1">G1</option>
-                                <option <?php if($eleve->getFiliere() == "G2"){ ?> selected <?php }?> value="G2">G2</option>
+                                <option <?php if($eleve->getFiliere() == "el"){ ?> selected <?php }?> value="el">EL</option>
+                                <option <?php if($eleve->getFiliere() == "fm"){ ?> selected <?php }?> value="fm">FM</option>
+                                <option <?php if($eleve->getFiliere() == "g2"){ ?> selected <?php }?> value="g2">G2</option>
+                                <option <?php if($eleve->getFiliere() == "ob"){ ?> selected <?php }?> value="ob">OB</option>
+                                <option <?php if($eleve->getFiliere() == "cec"){ ?> selected <?php }?> value="cec">CEC</option>
+                                <option <?php if($eleve->getFiliere() == "om"){ ?> selected <?php }?> value="om">OM</option>
+                                <option <?php if($eleve->getFiliere() == "g3"){ ?> selected <?php }?> value="g3">OM</option>
+                                <option <?php if($eleve->getFiliere() == "dem"){ ?> selected <?php }?> value="dem">DEM</option>
                             </select>
                         </div>
 
@@ -84,7 +118,7 @@
             </div>
 
             <button type="submit" class="btn">Modifier</button>
-            <a class="btn" href="./Controller/ListeController.php">Retour</a>
+            <a class="btn" href="/projetEcole/Controller/ListeController.php">Retour</a>
         </form>
     </div>
 </body>

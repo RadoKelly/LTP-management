@@ -4,23 +4,29 @@
         private $eleve;
         private $filiere;
         private $classe;
+        private $total_note;
         private $moyenne;
         private $rang;
         private $appreciation;
         private $absence;
         private $retard;
+        private $trimestre;
+        private $moyenne_classe;
 
-        public function __construct($id,$eleve,$filiere,$classe,$moyenne,$rang,$appreciation,$absence,$retard,)
+        public function __construct($id,$eleve,$filiere,$classe,$total_note,$moyenne,$rang,$appreciation,$absence,$retard, $trimestre, $moyenne_classe)
         {
             $this->id = $id;
             $this->eleve = $eleve;
             $this->filiere = $filiere;
             $this->classe = $classe;
+            $this->total_note = $total_note;
             $this->moyenne = $moyenne;
             $this->rang = $rang;
             $this->appreciation = $appreciation;
             $this->absence = $absence;
             $this->retard = $retard;
+            $this->trimestre = $trimestre;
+            $this->moyenne_classe = $moyenne_classe;
         }
 
         /**
@@ -199,6 +205,66 @@
         public function setRetard($retard)
         {
                 $this->retard = $retard;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of total_note
+         */ 
+        public function getTotal_note()
+        {
+                return $this->total_note;
+        }
+
+        /**
+         * Set the value of total_note
+         *
+         * @return  self
+         */ 
+        public function setTotal_note($total_note)
+        {
+                $this->total_note = $total_note;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of trimestre
+         */ 
+        public function getTrimestre()
+        {
+                return $this->trimestre;
+        }
+
+        /**
+         * Set the value of trimestre
+         *
+         * @return  self
+         */ 
+        public function setTrimestre($trimestre)
+        {
+                $this->trimestre = $trimestre;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of moyenne_classe
+         */ 
+        public function getMoyenne_classe()
+        {
+                return $this->moyenne_classe;
+        }
+
+        /**
+         * Set the value of moyenne_classe
+         *
+         * @return  self
+         */ 
+        public function setMoyenne_classe($moyenne_classe)
+        {
+                $this->moyenne_classe = $moyenne_classe;
 
                 return $this;
         }

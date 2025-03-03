@@ -10,8 +10,13 @@
         private $secteur;
         private $filiere;
         private $niveau;
+        private $contact;
+        private $address;
+        private $inscription;
+        private $observation;
 
-        public function __construct($id,$nom,$prenom,$date_naissance,$numero,$matricule,$sexe,$secteur,$filiere,$niveau){
+
+        public function __construct($id,$nom,$prenom,$date_naissance,$numero,$matricule,$sexe,$secteur,$filiere,$niveau,$contact,$address,$inscription,$observation){
         $this->id = $id;
             $this->nom = $nom;
             $this->prenom = $prenom;
@@ -22,6 +27,10 @@
             $this->secteur = $secteur;
             $this->filiere = $filiere;
             $this->niveau = $niveau;
+            $this->contact = $contact;
+            $this->address = $address;
+            $this->inscription = $inscription;
+            $this->observation = $observation;
         }
 
         /**
@@ -220,6 +229,86 @@
         public function setNiveau($niveau)
         {
                 $this->niveau = $niveau;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of contact
+         */ 
+        public function getContact()
+        {
+                return $this->contact;
+        }
+
+        /**
+         * Set the value of contact
+         *
+         * @return  self
+         */ 
+        public function setContact($contact)
+        {
+                $this->contact = $contact;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of address
+         */ 
+        public function getAddress()
+        {
+                return $this->address;
+        }
+
+        /**
+         * Set the value of address
+         *
+         * @return  self
+         */ 
+        public function setAddress($address)
+        {
+                $this->address = $address;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of inscription
+         */ 
+        public function getInscription()
+        {
+                return $this->inscription;
+        }
+
+        /**
+         * Set the value of inscription
+         *
+         * @return  self
+         */ 
+        public function setInscription($inscription)
+        {
+                $this->inscription = $inscription;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of observation
+         */ 
+        public function getObservation()
+        {
+                return $this->observation;
+        }
+
+        /**
+         * Set the value of observation
+         *
+         * @return  self
+         */ 
+        public function setObservation($observation)
+        {
+                $this->observation = $observation;
 
                 return $this;
         }

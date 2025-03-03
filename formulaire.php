@@ -8,6 +8,7 @@
     <title>Ajouter Eleves</title>
 </head>
 <body>
+
     <div class="container">
         <header>Inscription</header>
 
@@ -50,6 +51,33 @@
                             </select>
                         </div>
 
+                        <div class="input-field">
+                            <label>Contact</label>
+                            <input type="text" name="contact" placeholder="Entrer le contact" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label >Address</label>
+                            <input type="text" name="address" placeholder="Entrer l'address" required>
+                        </div>
+
+                        <div class="input-field">
+                        <label for="inscription">Année Scolaire</label>
+                            <select name="inscription" id="inscription">
+                                <option value="2024-2025">2024-2025</option>
+                                <option value="2025-2026">2025-2026</option>
+                                <option value="2026-2027">2026-2027</option>
+                            </select>    
+                        </div>
+
+                        <div class="input-field">
+                        <label for="observation">Observation</label>
+                            <select name="observation" id="observation">
+                                <option value="Passant">Passant</option>
+                                <option value="Redoublant">Redoublant</option>
+                            </select>    
+                        </div>
+
                         <hr>
 
                         <div class="input-field">
@@ -79,8 +107,8 @@
                             <label for="niveau">Niveau</label>
                             <select name="niveau" id="niveau">
                                 <option value="1er">1er année</option>
-                                <option value="2em">2er année</option>
-                                <option value="3em">3er année</option>
+                                <option value="2em">2em année</option>
+                                <option value="3em">3em année</option>
                             </select>
                         </div>
 

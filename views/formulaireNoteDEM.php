@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php if($lienCss != null){ echo $lienCss; }else{echo '../public/css/formulaire.css';}?>">
     <link rel="stylesheet" href="<?php if($lienCss != null){ echo '../../public/css/liste.css'; }else{echo '../public/css/liste.css';}?>">
-    <title>Ajouter Notes</title>
+    <title>Ajouter Notes DEM</title>
 </head>
 <body class="body">
+<?php 
+include '../views/header.php';
+?>
     
     <div class="nav">
 
@@ -46,34 +49,7 @@
 </tbody>
 
 </table>
-
-
-
-
-
-        <!-- <table id="listeEleve">
-            <tr>
-                <th>Liste Eleves</th>
-            </tr>
-            <?php
-              foreach($lesEleves as $eleve):?>
-              <tr>
-                <td>
-                    <a href="<?php 
-                    if($id != null){
-                        echo '/projetEcole/Controller/NoteEleveController.php/?id='. $eleve->getId();
-                    }else{
-                        echo 'NoteEleveController.php/?id='.$eleve->getId();
-                    }
-                    ?>"><?php echo $eleve->getNom().' '.$eleve->getPrenom(); ?></a>
-                </td>
-            </tr>
-              <?php endforeach ?>
-              
-        </table> -->
-
-
-        
+    
     </div>
 
 
@@ -81,7 +57,7 @@
     <div class="container">
         <header>Ajouter Notes</header>
 
-        <form action="/projetEcole/Controller/AjoutNoteController.php" method="post">
+        <form action="/projetEcole/Controller/Dem_controller.php" method="post">
             <div class="form first">
                 <div class="details personal" >
 
@@ -98,6 +74,14 @@
                         <p><span>Niveau:</span> <?php echo $unEleve->getNiveau(); ?></p>
                         <?php  }
                         ?>
+                        </div>
+                        <div class="input-field">
+                            <label for="niveau">Trimestre</label>
+                            <select name="trimestre" id="trimestre">
+                                <option value="1er">1er Trimestre</option>
+                                <option value="2em">2em Trimestre</option>
+                                <option value="3em">3em Trimestre</option>
+                            </select>
                         </div>
                         <hr>
 
@@ -147,19 +131,19 @@
             <td></td>
         </tr>
         <tr>
-            <td>SPHYS</td>
-            <td>2</td>
+            <td>RDM</td>
+            <td>3</td>
             <td>
-                <input type="number" name="sphys">
+                <input type="number" name="rdm">
             </td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td>ELEC</td>
-            <td>4</td>
+            <td>SPHYS</td>
+            <td>3</td>
             <td>
-                <input type="number" name="elec">
+                <input type="number" name="sphys">
             </td>
             <td></td>
             <td></td>
@@ -174,19 +158,19 @@
             <td></td>
         </tr>
         <tr>
-            <td>Equipement</td>
-            <td>4</td>
+            <td>HYDRAU</td>
+            <td>2</td>
             <td>
-                <input type="number" name="equipement">
+                <input type="number" name="hydrau">
             </td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td>SCH.AUTO</td>
-            <td>3</td>
+            <td>TOPO</td>
+            <td>2</td>
             <td>
-                <input type="number" name="schauto">
+                <input type="number" name="topo">
             </td>
             <td></td>
             <td></td>
@@ -201,19 +185,19 @@
             <td></td>
         </tr>
         <tr>
-            <td>INST</td>
-            <td>2</td>
+            <td>TP</td>
+            <td>5</td>
             <td>
-                <input type="number" name="inst">
+                <input type="number" name="tp">
             </td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td>ESMES</td>
-            <td>4</td>
+            <td>MOREX</td>
+            <td>3</td>
             <td>
-                <input type="number" name="esmes">
+                <input type="number" name="morex">
             </td>
             <td></td>
             <td></td>
@@ -239,27 +223,7 @@
 
         </table>
         <div class="form first">
-                <div class="details personal" >
-                    <span class="title">Informations</span>
-
-                    <div class="fields">
-                        <div class="input-field">
-                            <label for="absence">Absence</label>
-                            <input type="number" name="absence" placeholder="Entrer le nombre d'absence" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label >Retard</label>
-                            <input type="number" name="retard" placeholder="Entrer le nombre de retard" required>
-                        </div>
-                        
-                        <div class="input-field">
-                            <label for="appreciation">Appreciation</label>
-                            <input type="text" name="appreciation" placeholder="Entrer l'appreciation" required>
-                        </div>
-
-                </div>
-            </div>
+                
 
             <button type="submit" class="btn">Enregistrer</button>
             

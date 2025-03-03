@@ -19,20 +19,14 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-}
+/*  */
 
 .container {
+    
    padding: 20px; 
    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
    background: #fff;
    border-radius: 10px;
-   margin: 10px;
-   margin-top: 50px;
 }
 
 .container header .filterEntries {
@@ -76,13 +70,13 @@ body {
 
 .container header .addMemberBtn {
     margin-bottom: 40px;
-    margin-top: 30px;
+    margin-top: 70px;
     display: flex;
     justify-content: space-between;
 }
 
 header .addMemberBtn button, .popup header .closeBtn, .popup footer .submitBtn {
-    padding: 9px 14px;
+    padding: 14px 20px;
     color: #333;
     background: transparent;
     font-size: 16px;
@@ -436,6 +430,7 @@ select#dt-length-0{
 
 #listeEleve {
     border-collapse: collapse;
+    padding: 20px;
 }
 
 #listeEleve_info {
@@ -463,4 +458,156 @@ nav .dt-paging-button {
 nav .dt-paging-button:hover {
     background: #ddd;
 }
+
+
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 10px;
+    list-style-type: none;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    /* background: #6ee500; */
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.header a{
+    text-decoration: none;
+    color: #000;
+}
+
+.dec a {
+    background: none;
+    border: 1px solid #ddd;
+    color: #fff;
+    padding: 7px 13px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.dec a:hover{
+    opacity: 0.8;
+}
+
+.resultat {
+    margin-top: 50px;
+}
+
+td.resultat, thead.resultat, th.resultat {
+    border: 1px solid #000;
+}
+
+tr.tbody {
+    border: 1px solid #000;
+}
+
+.classe {
+    color: red;
+}
+
+.action-buttons {
+    display: flex; /* Permet de gérer les éléments horizontalement */
+    flex-direction: row; /* Aligne les boutons sur une seule ligne */
+    justify-content: space-evenly; /* Espacement égal entre les boutons */
+    align-items: center; /* Centre les boutons verticalement */
+}
+
+.action-buttons a {
+    margin: 0 5px; /* Espacement entre les liens */
+}
+
+.action-buttons button {
+    border: none; /* Supprime la bordure des boutons */
+    background: transparent; /* Fond transparent */
+    cursor: pointer; /* Curseur pointeur pour cliquer */
+}
+
+
+
+td.action-buttons {
+    text-align: center; /* Centre le contenu horizontalement */
+    vertical-align: middle; /* Centre le contenu verticalement */
+    /* height: 100px; Ajustez la hauteur si nécessaire */
+}
+
+.action-buttons button {
+    width: 35px; /* Taille uniforme */
+    height: 35px;
+    margin: 5px; /* Espacement entre les boutons */
+    border: 2px solid #ccc; /* Bordure grise par défaut */
+    border-radius: 5px; /* Bordures arrondies (facultatif) */
+    background-color: #f9f9f9; /* Fond clair */
+    cursor: pointer;
+    transition: 0.3s; /* Animation pour les effets au survol */
+}
+
+.action-buttons button:hover {
+    background-color: #eef5ff; /* Change la couleur de fond au survol */
+}
+
+.action-buttons button i {
+    font-size: 20px; /* Ajuste la taille des icônes */
+    color: #333; /* Couleur par défaut des icônes */
+}
+
+.action-buttons .view:hover {
+    border-color: green;
+    color: green;
+}
+
+.action-buttons .edit:hover {
+    border-color: orange;
+}
+
+.action-buttons .delete:hover {
+    border-color: red;
+    background: red;
+}
+
+.action-buttons .file:hover {
+    border-color: blue;
+}
+
+.action-buttons .clock:hover {
+    border-color: purple;
+}
+
+/*  boutton transformer */
+
+.addMemberBtn button {
+    display: flex; /* Place l'icône et le texte sur la même ligne */
+    align-items: center; /* Aligne verticalement le contenu du bouton */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #007bff; /* Bordure bleue */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Couleur de fond */
+    color: #007bff; /* Couleur du texte */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.addMemberBtn button i {
+    margin-right: 8px; /* Espacement entre l'icône et le texte */
+    font-size: 18px; /* Taille de l'icône */
+}
+
+
+
+.addMemberBtn button:hover i {
+    color: #fff; /* Icône blanche au survol */
+}
+
+.addMemberBtn a {
+    margin-right: 10px; /* Espace entre les deux boutons */
+    text-decoration: none; /* Supprime le soulignement des liens */
+}
+
 

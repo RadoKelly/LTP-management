@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,47 +8,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?php if($lienCss != null){ echo $lienCss; }else{echo '../public/css/formulaire.css';}?>">
     <link rel="stylesheet" href="<?php if($lienCss != null){ echo '../../public/css/liste.css'; }else{echo '../public/css/liste.css';}?>">
+    <link rel="stylesheet" href="<?php if($lienCss != null){ echo '../public/css/all.min.css'; }else{echo '../../public/css/all.min.css';}?>">
+    <link rel="stylesheet" href="<?php if($lienCss != null){ echo '../public/css/fontawesome.min.css'; }else{echo '../../public/css/fontawesome.min.css';}?>">
+    <link rel="stylesheet" href="../../public/css/all.min.css">
+    <link rel="stylesheet" href="../../public/css/fontawesome.min.css">
     <title>Ajouter Notes</title>
 </head>
 <body class="body">
-    
+<?php 
+include '../views/header.php';
+?>
     <div class="nav">
 
     <table id="listeEleve" class="display">
 
-<thead>
-    <tr class="heading">
-        <th></th>
-        <th></th>
-        <th></th>
-        
-    </tr>
-</thead>
+        <thead>
+            <tr class="heading">
+                <th></th>
+                <th></th>
+                <th></th>
+                
+            </tr>
+        </thead>
 
-<tbody>
-<?php
-    foreach($lesEleves as $eleve):?>
-    
-    <tr class="tbody">
-        <td><a href="
-        <?php 
-            if($id != null){
-                echo '/projetEcole/Controller/NoteEleveController.php/?id='. $eleve->getId();
-            }else{
-                echo 'NoteEleveController.php/?id='.$eleve->getId();
-            }
-            ?>">
-            <?php echo $eleve->getId(); ?></a>
-        </td>
-        <td><?php echo $eleve->getNom(); ?></td>
-        <td><?php echo $eleve->getPrenom(); ?></td>
-           
-    </tr>
-    
-    <?php endforeach ?>
-</tbody>
+        <tbody>
+        <?php
+            foreach($lesEleves as $eleve):?>
+            
+            <tr class="tbody">
+                <td><a href="
+                <?php 
+                    if($id != null){
+                        echo '/projetEcole/Controller/NoteEleveController.php/?id='. $eleve->getId();
+                    }else{
+                        echo 'NoteEleveController.php/?id='.$eleve->getId();
+                    }
+                    ?>">
+                    <?php echo $eleve->getId(); ?></a>
+                </td>
+                <td><?php echo $eleve->getNom(); ?></td>
+                <td><?php echo $eleve->getPrenom(); ?></td>
+                
+            </tr>
+            
+            <?php endforeach ?>
+        </tbody>    
 
-</table>
+        </table>
 
 
 
@@ -98,6 +107,14 @@
                         <p><span>Niveau:</span> <?php echo $unEleve->getNiveau(); ?></p>
                         <?php  }
                         ?>
+                        </div>
+                        <div class="input-field">
+                            <label for="niveau">Trimestre</label>
+                            <select name="trimestre" id="trimestre">
+                                <option value="1er">1er Trimestre</option>
+                                <option value="2em">2em Trimestre</option>
+                                <option value="3em">3em Trimestre</option>
+                            </select>
                         </div>
                         <hr>
 
@@ -239,27 +256,7 @@
 
         </table>
         <div class="form first">
-                <div class="details personal" >
-                    <span class="title">Informations</span>
-
-                    <div class="fields">
-                        <div class="input-field">
-                            <label for="absence">Absence</label>
-                            <input type="number" name="absence" placeholder="Entrer le nombre d'absence" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label >Retard</label>
-                            <input type="number" name="retard" placeholder="Entrer le nombre de retard" required>
-                        </div>
-                        
-                        <div class="input-field">
-                            <label for="appreciation">Appreciation</label>
-                            <input type="text" name="appreciation" placeholder="Entrer l'appreciation" required>
-                        </div>
-
-                </div>
-            </div>
+                
 
             <button type="submit" class="btn">Enregistrer</button>
             

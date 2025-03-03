@@ -1,5 +1,10 @@
 <?php
 
+require_once '../config/database.php';
+require_once '../Dbo/DbAcces.php';
+
+
+
 class MatiereModel {
     private $id;
     private $num_matricule;
@@ -17,9 +22,11 @@ class MatiereModel {
     private $esmes;
     private $eps;
     private $ee;
+    private $trimerste;
+
 
     public function __construct($id,$num_matricule,$malagasy,$francais,$anglais,$math,$sphys,$elec,$techno,
-    $equipement,$schauto,$dess,$inst,$esmes,$eps,$ee,)
+    $equipement,$schauto,$dess,$inst,$esmes,$eps,$ee,$trimerste)
     {
         $this->id = $id;
         $this->num_matricule = $num_matricule;
@@ -37,7 +44,10 @@ class MatiereModel {
         $this->esmes = $esmes;
         $this->eps = $eps;
         $this->ee = $ee;
+        $this->trimerste = $trimerste;
+
     }
+    
 
 
     /**
@@ -359,4 +369,25 @@ class MatiereModel {
 
         return $this;
     }
+
+        /**
+     * Get the value of trimerste
+     */ 
+    public function getTrimerste()
+    {
+        return $this->trimerste;
+    }
+
+    /**
+     * Set the value of trimerste
+     *
+     * @return  self
+     */ 
+    public function setTrimerste($trimerste)
+    {
+        $this->trimerste = $trimerste;
+
+        return $this;
+    }
+
 }

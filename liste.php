@@ -6,33 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/css/liste.css">
+    <link rel="stylesheet" href="../public/css/all.min.css">
+    <link rel="stylesheet" href="../public/css/fontawesome.min.css">
     <link rel="stylesheet" href="../public/DataTables/datatables.min.css">
     <title>Liste Eleve</title>
 </head>
 </head>
 <body>
+<?php 
+include '../views/header.php';
+?>
     <div class="container">
 
       <header>
-          <!-- <div class="filterEntries">
-              <div class="entries">
-                  Show <select name="" id="">
-                      <option value="10">10</option>
-                      <option value="20">20</option>
-                      <option value="50">50</option>
-                      <option value="100">100</option>
-                  </select> entries
-              </div>
-
-              <div class="filter">
-                  <label for="search">Rechercher</label>
-                  <input type="search" name="search" id="search" placeholder="Entrer nom">
-              </div>
-          </div> -->
-
-          <div class="addMemberBtn">
-              <a href="../formulaire.php"><button>Ajouter Membre</button></a>
-              <a href="./NoteController.php"><button>Ajouter Note</button></a>
+        <div class="addMemberBtn">
+              <a href="../formulaire.php"><button><i class="fa fa-plus"></i> Ajouter Membre </button></a>
+              <a href="./NoteController.php"><button><i class="fa fa-plus"></i>  Ajouter Note</button></a>
           </div>
       </header>
 
@@ -68,101 +57,24 @@
                   <td><?php echo $eleve->getSecteur(); ?></td>
                   <td><?php echo $eleve->getFiliere(); ?></td>
                   <td><?php echo $eleve->getNiveau(); ?></td>
-                  <td>
-                      <a href=""><button class="btn voir"><img src="../public/img/eye.svg" alt=""></button></a>
-                      <a href="./ModifierEleveController.php/?id=<?php echo $eleve->getId(); ?>"><button class="btn edit"><img src="../public/img/edit.svg" alt=""></button></a>
-                      <a href="./SupprimerEleveController.php/?id=<?php echo $eleve->getId(); ?>" id="mylink"><button class="btn delete" ><img src="../public/img/delete.svg" alt=""></button></a>
-                  </td>
+                  <td class="action-buttons">
+                    <a href="./VoirEleveController.php/?id=<?php echo $eleve->getId(); ?>"><button class="view"><i class="fa fa-eye"></i></button></a>
+                    <a href="./ModifierEleveController.php/?id=<?php echo $eleve->getId(); ?>"><button class="edit"><i class="fa fa-pencil"></i></button></a>
+                    <a href="./AfficherNoteElController.php/?num_matricule=<?php echo $eleve->getMatricule(); ?>&fil=<?php echo $eleve->getFiliere(); ?>&id=<?php echo $eleve->getId(); ?>" ><button class="file"><i class="fa fa-file"></i></button></button></a>
+                    <a href="../views/absFormulaire.php/?id=<?php echo $eleve->getId(); ?>"><button class="clock"><i class="fa fa-clock"></i></button></a>
+                    <a href="./SupprimerEleveController.php/?id=<?php echo $eleve->getId(); ?>" onclick=" return comfirmDelete();" id="mylink"><button class="delete"><i class="fa fa-trash"></i></button></a>
+                </td>
               </tr>
               <?php endforeach ?>
           </tbody>
 
       </table>
+      
+
 
       
     </div>
 
-    <!-- Popup Form -->
- 
-    <div class="dark_bg">
-
-            <div class="popup">
-                <header>
-                    <h2 class="modalTitle">Completer le Formulaire</h2>
-                    <button class="closeBtn">&times;</button>
-                </header>
-
-                <div class="body">
-                    <form action="#" id="myForm">
-                        <div class="imgholder">
-                            <label for="uploading" class="upload">
-                                <input type="file" name="" id="uploading" class="picture">
-                                <i>+</i>
-                            </label>
-                            <img src="../public/img/pic_profile.svg" alt="" width="150" height="150" class="img">
-                        </div>
-
-                        <div class="inputFieldContainer">
-                            <div class="nameField">
-                                <div class="form_control">
-                                    <label for="fname">Nom</label>
-                                    <input type="text" name="" id="fname" required>
-                                </div>
-
-                                <div class="form_control">
-                                    <label for="lname">Prenom</label>
-                                    <input type="text" name="" id="lname" required>
-                                </div>
-                            </div>
-
-                            <div class="ageCityField">
-                                <div class="form_control">
-                                    <label for="age">Age</label>
-                                    <input type="text" name="" id="age" required>
-                                </div>
-
-                                <div class="form_control">
-                                    <label for="age">City</label>
-                                    <input type="text" name="" id="age" required>
-                                </div>
-                            </div>
-
-                            <div class="postSalary">
-                                    <div class="form_control">
-                                        <label for="position">Position</label>
-                                        <input type="text" name="" id="position" required>
-                                    </div>
-
-                                    <div class="form_control">
-                                        <label for="salary">Salary</label>
-                                        <input type="text" name="" id="salary" required>
-                                    </div>
-                            </div>
-
-                            <div class="form_control">
-                                        <label for="sDate">Start Date</label>
-                                        <input type="date" name="" id="sDate" required>
-                                    </div>
-
-                                    <div class="form_control">
-                                        <label for="email">Email</label>
-                                        <input type="email" name="" id="email" required>
-                                    </div>
-                                    
-                                    <div class="form_control">
-                                        <label for="number">Phone:</label>
-                                        <input type="number" name="" id="number" required>
-                                    </div> 
-                        </div>
-                    </div>
-                    </form>
-                    <footer>
-                        <button form="myForm" class="submitBtn">Ajouter</button>
-                    </footer>
-            </div>
-
-            
-    </div>
     
 
 <script src="../public/js/liste.js"></script>
@@ -171,6 +83,13 @@
 
 <script>
     new DataTable('#example');
+</script>
+
+<script>
+    console.log('hello');
+    function comfirmDelete() {
+        return confirm("Etes-vous sûr de vouloir supprimer cet élève ?");
+    }
 </script>
 
 </body>

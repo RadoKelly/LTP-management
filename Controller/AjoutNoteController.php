@@ -14,12 +14,13 @@
         
         $matiere = new MatiereModel(null,$_POST['num'],$_POST['malagasy'], $_POST['francais'], $_POST['anglais'], $_POST['math'],
          $_POST['sphys'], $_POST['elec'], $_POST['techno'], $_POST['equipement'],$_POST['schauto']
-         , $_POST['dess'], $_POST['inst'], $_POST['esmes'], $_POST['eps'], $_POST['ee']);
+         , $_POST['dess'], $_POST['inst'], $_POST['esmes'], $_POST['eps'], $_POST['ee'], $_POST['trimestre']);
         $numMatricule = $_POST['num'];
+        $trimestre = $_POST['trimestre'];
         // Passe $conn à DbAcces
         $contro = new DbAcces($conn);
         $verificationMatiere = $contro->InsertionNoteMatiere($matiere);
-        $el = $contro->RecupererNoteMatiere($numMatricule);
+        $el = $contro->RecupererNoteMatiereTrim($numMatricule,$trimestre);
         $sphy = $el->getSphys();
         if ($verificationMatiere == true && $el != null) {
             //header("Location:ListeController.php");
@@ -28,11 +29,12 @@
         $rang = 1;
         $LeMoyenne = new MoyenneEl();
         $moyenne = $LeMoyenne->El($el);
-        $note = new NoteModel(null,$_POST['id'],$id_filiere, null, $moyenne, $rang,
-         $_POST['appreciation'], $_POST['absence'], $_POST['retard']);
+        $note = new NoteModel(null,$_POST['id'],$id_filiere, null,$moyenne[1], $moyenne[0], $rang,
+         null, null, null, $_POST['trimestre'], null);
          $verifNote = $contro->InsertionNote($note);
             if($verifNote){
-                echo 'succes moyenne : '.$moyenne;
+                echo 'succes moyenne : '.$moyenne[0];
+                echo 'succes total note : '.$moyenne[1];
             }
             else{
                 echo 'erreur sur note';
